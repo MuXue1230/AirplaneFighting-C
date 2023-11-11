@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="源文件\debug">
+      <UniqueIdentifier>{b1b9df4b-bd71-4fff-a3c7-1bb4946b0399}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\debug">
+      <UniqueIdentifier>{0dba02ac-573c-44b0-a372-50000fc53c5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\event">
+      <UniqueIdentifier>{d84d8d44-5d31-4e83-8f97-6b4bc78e3239}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\event">
+      <UniqueIdentifier>{e2be3c18-4db9-4b25-9f4f-52e91ebd5170}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\event\events">
+      <UniqueIdentifier>{b2a029f2-1f51-469e-a98e-c35e45de2eb7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\event\events">
+      <UniqueIdentifier>{c7528652-4b8b-4121-9c95-821f68299e2a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AirplaneFighting-C++.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Logger.cpp">
+      <Filter>源文件\debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Config.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="EventBus.cpp">
+      <Filter>源文件\event</Filter>
+    </ClCompile>
+    <ClCompile Include="Listener.cpp">
+      <Filter>源文件\event</Filter>
+    </ClCompile>
+    <ClCompile Include="EventTimer.cpp">
+      <Filter>源文件\event</Filter>
+    </ClCompile>
+    <ClCompile Include="Event.cpp">
+      <Filter>源文件\event\events</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Logger.h">
+      <Filter>头文件\debug</Filter>
+    </ClInclude>
+    <ClInclude Include="LoggerType.h">
+      <Filter>头文件\debug</Filter>
+    </ClInclude>
+    <ClInclude Include="Config.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="EventBus.h">
+      <Filter>头文件\event</Filter>
+    </ClInclude>
+    <ClInclude Include="Listener.h">
+      <Filter>头文件\event</Filter>
+    </ClInclude>
+    <ClInclude Include="EventTimer.h">
+      <Filter>头文件\event</Filter>
+    </ClInclude>
+    <ClInclude Include="EventTimerUnit.h">
+      <Filter>头文件\event</Filter>
+    </ClInclude>
+    <ClInclude Include="Event.h">
+      <Filter>头文件\event\events</Filter>
+    </ClInclude>
+    <ClInclude Include="EventType.h">
+      <Filter>头文件\event\events</Filter>
+    </ClInclude>
+    <ClInclude Include="AssetsType.h">
+      <Filter>头文件\event\events</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="config.json" />
+  </ItemGroup>
+</Project>

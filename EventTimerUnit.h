@@ -1,0 +1,5 @@
+#pragma once
+#define MS  0x0
+#define SEC 0x1
+#define MIN 0x2
+#define HOU 0x3
