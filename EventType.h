@@ -1,4 +1,5 @@
 #pragma once
+#include "Listener.h"
 
 #define EVENT               0x00
 
@@ -19,3 +20,9 @@
 #define NO_HIT_EVENT        0x36
 #define DOUBLE_BULLET_EVENT 0x37
 #define UPGRADE_EVENT       0x38
+
+struct ListenerList
+{
+	int ListenerType;
+	Listener listener;
+};

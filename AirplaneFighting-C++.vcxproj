@@ -124,7 +124,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <Version>
       </Version>
-      <AdditionalDependencies>SDL2.lib;SDL2_mixer.lib;SDL2_image.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2_mixer.lib;SDL2_image.lib;SDL2_ttf.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -153,8 +153,8 @@
     <ClCompile Include="Event.cpp" />
     <ClCompile Include="EventBus.cpp" />
     <ClCompile Include="EventTimer.cpp" />
+    <ClCompile Include="Game.cpp" />
     <ClCompile Include="Listener.cpp" />
-    <ClCompile Include="Logger.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AssetsType.h" />
@@ -164,9 +164,9 @@
     <ClInclude Include="EventTimer.h" />
     <ClInclude Include="EventTimerUnit.h" />
     <ClInclude Include="EventType.h" />
+    <ClInclude Include="Game.h" />
     <ClInclude Include="Listener.h" />
-    <ClInclude Include="Logger.h" />
-    <ClInclude Include="LoggerType.h" />
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="config.json" />
