@@ -6,6 +6,7 @@ Event::Event(SDL_Renderer* renderer)
 	this->renderer = renderer;
 }
 
-void Event::getEventType()
+int Event::getEventType()
 {
+	return this->eventType;
 }

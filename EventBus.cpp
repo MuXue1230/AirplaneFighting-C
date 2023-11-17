@@ -12,4 +12,9 @@ void EventBus::addListener(int eventType, Listener listener)
 
 void EventBus::addEvent(Event event)
 {
+	for (auto item : this->listeners) {
+		if (item.ListenerType == event.getEventType()) {
+			item.listener.handle(event);
+		}
+	}
 }

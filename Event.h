@@ -6,7 +6,7 @@ class Event
 {
 public:
 	Event(SDL_Renderer* renderer);
-	void getEventType();
+	int getEventType();
 private:
 	int eventType;
 	SDL_Renderer* renderer;

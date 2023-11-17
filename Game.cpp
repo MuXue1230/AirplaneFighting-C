@@ -4,6 +4,7 @@ Game::Game()
 {
 	config = new Config("config.json", "assets/");
 	config->init();
+	eventBus = new EventBus();
 }
 
 bool Game::Initialize()
@@ -27,6 +28,9 @@ bool Game::Initialize()
 		return false;
 	}
 	mRenderer = SDL_CreateRenderer(mWindow, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+	SDL_Surface* loadedSurface = IMG_Load("assets/images/load.png");
+	texture = SDL_CreateTextureFromSurface(mRenderer, loadedSurface);
+	SDL_FreeSurface(loadedSurface);
 	return true;
 }
 
@@ -43,6 +47,7 @@ void Game::Shutdown()
 {
 	SDL_DestroyWindow(mWindow);
 	SDL_DestroyRenderer(mRenderer);
+	SDL_DestroyTexture(texture);
 	IMG_Quit();
 	TTF_Quit();
 	SDL_Quit();
@@ -67,7 +72,11 @@ void Game::UpdateGame()
 
 void Game::GenerateOutput()
 {
+	SDL_DisplayMode mode;
+	config->get_screen_size(&mode);
 	SDL_SetRenderDrawColor(mRenderer, 255, 255, 255, 255);
 	SDL_RenderClear(mRenderer);
+	SDL_Rect renderQuad = { 0, 0, mode.w, mode.h };
+	SDL_RenderCopy(mRenderer, texture, NULL, NULL);
 	SDL_RenderPresent(mRenderer);
 }
