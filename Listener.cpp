@@ -4,6 +4,6 @@ Listener::Listener()
 {
 }
 
-void Listener::handle(Event event)
+void Listener::handle(Event* event)
 {
 }

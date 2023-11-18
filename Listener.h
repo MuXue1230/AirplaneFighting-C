@@ -5,6 +5,6 @@ class Listener
 {
 public:
 	Listener();
-	virtual void handle(Event event);
+	virtual void handle(Event* event);
 };
 
