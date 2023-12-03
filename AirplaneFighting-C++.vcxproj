@@ -149,53 +149,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AirplaneFighting-C++.cpp" />
-    <ClCompile Include="BombEvent.cpp" />
     <ClCompile Include="Config.cpp" />
-    <ClCompile Include="DoubleBulletEvent.cpp" />
-    <ClCompile Include="Event.cpp" />
-    <ClCompile Include="EventBus.cpp" />
-    <ClCompile Include="EventTimer.cpp" />
-    <ClCompile Include="ExitEvent.cpp" />
     <ClCompile Include="Game.cpp" />
-    <ClCompile Include="GuiCloseEvent.cpp" />
-    <ClCompile Include="GuiOpenEvent.cpp" />
-    <ClCompile Include="InitEvent.cpp" />
-    <ClCompile Include="Listener.cpp" />
-    <ClCompile Include="LoadEvent.cpp" />
-    <ClCompile Include="NoHitEvent.cpp" />
-    <ClCompile Include="PlaneCrashEvent.cpp" />
-    <ClCompile Include="PlaneSpawnEvent.cpp" />
-    <ClCompile Include="PreInitEvent.cpp" />
-    <ClCompile Include="ReloadEvent.cpp" />
-    <ClCompile Include="SupplyEvent.cpp" />
-    <ClCompile Include="UnloadEvent.cpp" />
-    <ClCompile Include="UpgradeEvent.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AssetsType.h" />
-    <ClInclude Include="BombEvent.h" />
     <ClInclude Include="Config.h" />
-    <ClInclude Include="DoubleBulletEvent.h" />
-    <ClInclude Include="Event.h" />
-    <ClInclude Include="EventBus.h" />
-    <ClInclude Include="EventTimer.h" />
-    <ClInclude Include="EventTimerUnit.h" />
-    <ClInclude Include="EventType.h" />
-    <ClInclude Include="ExitEvent.h" />
     <ClInclude Include="Game.h" />
-    <ClInclude Include="GuiCloseEvent.h" />
-    <ClInclude Include="GuiOpenEvent.h" />
-    <ClInclude Include="InitEvent.h" />
-    <ClInclude Include="Listener.h" />
-    <ClInclude Include="LoadEvent.h" />
-    <ClInclude Include="NoHitEvent.h" />
-    <ClInclude Include="PlaneCrashEvent.h" />
-    <ClInclude Include="PlaneSpawnEvent.h" />
-    <ClInclude Include="PreInitEvent.h" />
-    <ClInclude Include="ReloadEvent.h" />
-    <ClInclude Include="SupplyEvent.h" />
-    <ClInclude Include="UnloadEvent.h" />
-    <ClInclude Include="UpgradeEvent.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="config.json" />

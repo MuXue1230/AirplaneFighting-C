@@ -4,7 +4,6 @@ Game::Game()
 {
 	config = new Config("config.json", "assets/");
 	config->init();
-	eventBus = new EventBus();
 }
 
 bool Game::Initialize()

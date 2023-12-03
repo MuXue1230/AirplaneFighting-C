@@ -9,18 +9,6 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="源文件\event">
-      <UniqueIdentifier>{d84d8d44-5d31-4e83-8f97-6b4bc78e3239}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="头文件\event">
-      <UniqueIdentifier>{e2be3c18-4db9-4b25-9f4f-52e91ebd5170}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\event\events">
-      <UniqueIdentifier>{b2a029f2-1f51-469e-a98e-c35e45de2eb7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="头文件\event\events">
-      <UniqueIdentifier>{c7528652-4b8b-4121-9c95-821f68299e2a}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AirplaneFighting-C++.cpp">
@@ -29,139 +17,16 @@
     <ClCompile Include="Config.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="EventBus.cpp">
-      <Filter>源文件\event</Filter>
-    </ClCompile>
-    <ClCompile Include="Listener.cpp">
-      <Filter>源文件\event</Filter>
-    </ClCompile>
-    <ClCompile Include="EventTimer.cpp">
-      <Filter>源文件\event</Filter>
-    </ClCompile>
-    <ClCompile Include="Event.cpp">
-      <Filter>源文件\event\events</Filter>
-    </ClCompile>
     <ClCompile Include="Game.cpp">
       <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="UpgradeEvent.cpp">
-      <Filter>源文件\event\events</Filter>
-    </ClCompile>
-    <ClCompile Include="UnloadEvent.cpp">
-      <Filter>源文件\event\events</Filter>
-    </ClCompile>
-    <ClCompile Include="SupplyEvent.cpp">
-      <Filter>源文件\event\events</Filter>
-    </ClCompile>
-    <ClCompile Include="ReloadEvent.cpp">
-      <Filter>源文件\event\events</Filter>
-    </ClCompile>
-    <ClCompile Include="PreInitEvent.cpp">
-      <Filter>源文件\event\events</Filter>
-    </ClCompile>
-    <ClCompile Include="PlaneSpawnEvent.cpp">
-      <Filter>源文件\event\events</Filter>
-    </ClCompile>
-    <ClCompile Include="PlaneCrashEvent.cpp">
-      <Filter>源文件\event\events</Filter>
-    </ClCompile>
-    <ClCompile Include="NoHitEvent.cpp">
-      <Filter>源文件\event\events</Filter>
-    </ClCompile>
-    <ClCompile Include="LoadEvent.cpp">
-      <Filter>源文件\event\events</Filter>
-    </ClCompile>
-    <ClCompile Include="InitEvent.cpp">
-      <Filter>源文件\event\events</Filter>
-    </ClCompile>
-    <ClCompile Include="GuiOpenEvent.cpp">
-      <Filter>源文件\event\events</Filter>
-    </ClCompile>
-    <ClCompile Include="GuiCloseEvent.cpp">
-      <Filter>源文件\event\events</Filter>
-    </ClCompile>
-    <ClCompile Include="ExitEvent.cpp">
-      <Filter>源文件\event\events</Filter>
-    </ClCompile>
-    <ClCompile Include="DoubleBulletEvent.cpp">
-      <Filter>源文件\event\events</Filter>
-    </ClCompile>
-    <ClCompile Include="BombEvent.cpp">
-      <Filter>源文件\event\events</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Config.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="EventBus.h">
-      <Filter>头文件\event</Filter>
-    </ClInclude>
-    <ClInclude Include="Listener.h">
-      <Filter>头文件\event</Filter>
-    </ClInclude>
-    <ClInclude Include="EventTimer.h">
-      <Filter>头文件\event</Filter>
-    </ClInclude>
-    <ClInclude Include="EventTimerUnit.h">
-      <Filter>头文件\event</Filter>
-    </ClInclude>
-    <ClInclude Include="Event.h">
-      <Filter>头文件\event\events</Filter>
-    </ClInclude>
-    <ClInclude Include="EventType.h">
-      <Filter>头文件\event\events</Filter>
-    </ClInclude>
-    <ClInclude Include="AssetsType.h">
-      <Filter>头文件\event\events</Filter>
-    </ClInclude>
     <ClInclude Include="Game.h">
       <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="UpgradeEvent.h">
-      <Filter>头文件\event\events</Filter>
-    </ClInclude>
-    <ClInclude Include="UnloadEvent.h">
-      <Filter>头文件\event\events</Filter>
-    </ClInclude>
-    <ClInclude Include="SupplyEvent.h">
-      <Filter>头文件\event\events</Filter>
-    </ClInclude>
-    <ClInclude Include="ReloadEvent.h">
-      <Filter>头文件\event\events</Filter>
-    </ClInclude>
-    <ClInclude Include="PreInitEvent.h">
-      <Filter>头文件\event\events</Filter>
-    </ClInclude>
-    <ClInclude Include="PlaneSpawnEvent.h">
-      <Filter>头文件\event\events</Filter>
-    </ClInclude>
-    <ClInclude Include="PlaneCrashEvent.h">
-      <Filter>头文件\event\events</Filter>
-    </ClInclude>
-    <ClInclude Include="NoHitEvent.h">
-      <Filter>头文件\event\events</Filter>
-    </ClInclude>
-    <ClInclude Include="LoadEvent.h">
-      <Filter>头文件\event\events</Filter>
-    </ClInclude>
-    <ClInclude Include="InitEvent.h">
-      <Filter>头文件\event\events</Filter>
-    </ClInclude>
-    <ClInclude Include="GuiOpenEvent.h">
-      <Filter>头文件\event\events</Filter>
-    </ClInclude>
-    <ClInclude Include="GuiCloseEvent.h">
-      <Filter>头文件\event\events</Filter>
-    </ClInclude>
-    <ClInclude Include="ExitEvent.h">
-      <Filter>头文件\event\events</Filter>
-    </ClInclude>
-    <ClInclude Include="DoubleBulletEvent.h">
-      <Filter>头文件\event\events</Filter>
-    </ClInclude>
-    <ClInclude Include="BombEvent.h">
-      <Filter>头文件\event\events</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
