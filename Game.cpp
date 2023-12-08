@@ -2,8 +2,8 @@
 
 Game::Game()
 {
-	config = new Config("config.json", "assets/");
-	config->init();
+	mConfig = new Config("config.json", "assets/");
+	mConfig->init();
 }
 
 bool Game::Initialize()
@@ -20,16 +20,14 @@ bool Game::Initialize()
 		SDL_Log("Can't init SDL_ttf: ", TTF_GetError());
 	}
 	SDL_DisplayMode mode;
-	config->get_screen_size(&mode);
+	mConfig->get_screen_size(&mode);
 	mWindow = SDL_CreateWindow("game.window.title", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, mode.w, mode.h, SDL_WINDOW_BORDERLESS);
 	if (!mWindow) {
 		SDL_Log("Can't create SDL window: ", SDL_GetError());
 		return false;
 	}
 	mRenderer = SDL_CreateRenderer(mWindow, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
-	SDL_Surface* loadedSurface = IMG_Load("assets/images/load.png");
-	texture = SDL_CreateTextureFromSurface(mRenderer, loadedSurface);
-	SDL_FreeSurface(loadedSurface);
+	mTextureBus = new TextureBus(mRenderer);
 	return true;
 }
 
@@ -46,7 +44,6 @@ void Game::Shutdown()
 {
 	SDL_DestroyWindow(mWindow);
 	SDL_DestroyRenderer(mRenderer);
-	SDL_DestroyTexture(texture);
 	IMG_Quit();
 	TTF_Quit();
 	SDL_Quit();
@@ -71,11 +68,7 @@ void Game::UpdateGame()
 
 void Game::GenerateOutput()
 {
-	SDL_DisplayMode mode;
-	config->get_screen_size(&mode);
 	SDL_SetRenderDrawColor(mRenderer, 255, 255, 255, 255);
 	SDL_RenderClear(mRenderer);
-	SDL_Rect renderQuad = { 0, 0, mode.w, mode.h };
-	SDL_RenderCopy(mRenderer, texture, NULL, NULL);
 	SDL_RenderPresent(mRenderer);
 }

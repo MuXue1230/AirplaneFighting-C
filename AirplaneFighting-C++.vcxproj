@@ -151,10 +151,12 @@
     <ClCompile Include="AirplaneFighting-C++.cpp" />
     <ClCompile Include="Config.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="TextureBus.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Config.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="TextureBus.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="config.json" />

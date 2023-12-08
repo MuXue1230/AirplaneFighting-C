@@ -9,24 +9,42 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
+    <Filter Include="源文件\buses">
+      <UniqueIdentifier>{1694e617-003a-4582-9799-0339d119d8b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\buses">
+      <UniqueIdentifier>{b69578d1-f05f-4a54-92b8-5217d6875cc9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\actors">
+      <UniqueIdentifier>{36dec2d2-07a1-4ea5-8780-b8599432159f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\actors">
+      <UniqueIdentifier>{821a6ace-3595-4b3b-8258-bf9b5421d0a2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AirplaneFighting-C++.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Config.cpp">
+    <ClCompile Include="Game.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Game.cpp">
+    <ClCompile Include="TextureBus.cpp">
+      <Filter>源文件\buses</Filter>
+    </ClCompile>
+    <ClCompile Include="Config.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Config.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="Game.h">
       <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureBus.h">
+      <Filter>头文件\buses</Filter>
+    </ClInclude>
+    <ClInclude Include="Config.h">
+      <Filter>头文件\buses</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

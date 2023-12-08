@@ -5,6 +5,7 @@
 #include <SDL_ttf.h>
 
 #include "Config.h"
+#include "TextureBus.h"
 
 class Game
 {
@@ -20,7 +21,7 @@ private:
 	SDL_Window* mWindow;
 	SDL_Renderer* mRenderer;
 	bool mIsRunning = true;
-	Config* config;
-	SDL_Texture* texture;
+	Config* mConfig;
+	TextureBus* mTextureBus;
 };
 
