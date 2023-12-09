@@ -21,6 +21,12 @@
     <Filter Include="源文件\actors">
       <UniqueIdentifier>{821a6ace-3595-4b3b-8258-bf9b5421d0a2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\scenes">
+      <UniqueIdentifier>{c11bf5b6-c022-427e-a2dd-84d946f9fd72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\scenes">
+      <UniqueIdentifier>{2cb9e1cf-25e5-437c-ab4d-d42190f0be8c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AirplaneFighting-C++.cpp">
@@ -35,6 +41,18 @@
     <ClCompile Include="Config.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Actor.cpp">
+      <Filter>源文件\actors</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneBus.cpp">
+      <Filter>源文件\buses</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>源文件\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="AImage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -45,6 +63,18 @@
     </ClInclude>
     <ClInclude Include="Config.h">
       <Filter>头文件\buses</Filter>
+    </ClInclude>
+    <ClInclude Include="Actor.h">
+      <Filter>头文件\actors</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneBus.h">
+      <Filter>头文件\buses</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>头文件\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="AImage.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

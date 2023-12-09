@@ -28,6 +28,8 @@ bool Game::Initialize()
 	}
 	mRenderer = SDL_CreateRenderer(mWindow, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 	mTextureBus = new TextureBus(mRenderer);
+	mSceneBus = new SceneBus();
+	InitScenes();
 	return true;
 }
 
@@ -70,5 +72,14 @@ void Game::GenerateOutput()
 {
 	SDL_SetRenderDrawColor(mRenderer, 255, 255, 255, 255);
 	SDL_RenderClear(mRenderer);
+	mSceneBus->UpdateRenderer(mRenderer);
 	SDL_RenderPresent(mRenderer);
+}
+
+void Game::InitScenes()
+{
+	Scene* LoadScene = new Scene();
+	LoadScene->AddActor(*(new AImage((char*)"load", mTextureBus)));
+	LoadScene->SetStatus(ENABLED);
+	mSceneBus->AddSene(*LoadScene);
 }

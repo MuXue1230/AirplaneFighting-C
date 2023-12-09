@@ -6,6 +6,8 @@
 
 #include "Config.h"
 #include "TextureBus.h"
+#include "SceneBus.h"
+#include "AImage.h"
 
 class Game
 {
@@ -18,10 +20,14 @@ private:
 	void ProcessesInput();
 	void UpdateGame();
 	void GenerateOutput();
+
+	void InitScenes();
+
 	SDL_Window* mWindow;
 	SDL_Renderer* mRenderer;
 	bool mIsRunning = true;
 	Config* mConfig;
 	TextureBus* mTextureBus;
+	SceneBus* mSceneBus;
 };
 
