@@ -7,6 +7,8 @@
 #include "Config.h"
 #include "TextureBus.h"
 #include "SceneBus.h"
+#include "ILTextBus.h"
+
 #include "AImage.h"
 
 class Game
@@ -29,5 +31,6 @@ private:
 	Config* mConfig;
 	TextureBus* mTextureBus;
 	SceneBus* mSceneBus;
+	ILTextBus* mILTextBus;
 };
 

@@ -38,9 +38,6 @@
     <ClCompile Include="TextureBus.cpp">
       <Filter>源文件\buses</Filter>
     </ClCompile>
-    <ClCompile Include="Config.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="Actor.cpp">
       <Filter>源文件\actors</Filter>
     </ClCompile>
@@ -50,8 +47,14 @@
     <ClCompile Include="Scene.cpp">
       <Filter>源文件\scenes</Filter>
     </ClCompile>
+    <ClCompile Include="Config.cpp">
+      <Filter>源文件\buses</Filter>
+    </ClCompile>
     <ClCompile Include="AImage.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\actors</Filter>
+    </ClCompile>
+    <ClCompile Include="ILTextBus.cpp">
+      <Filter>源文件\buses</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -74,7 +77,10 @@
       <Filter>头文件\scenes</Filter>
     </ClInclude>
     <ClInclude Include="AImage.h">
-      <Filter>头文件</Filter>
+      <Filter>头文件\actors</Filter>
+    </ClInclude>
+    <ClInclude Include="ILTextBus.h">
+      <Filter>头文件\buses</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

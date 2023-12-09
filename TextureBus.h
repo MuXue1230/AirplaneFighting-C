@@ -15,7 +15,7 @@ private:
 
 	SDL_Renderer* mRenderer;
 	std::map<char*, SDL_Texture*> mTextures;
-	char* mLoadedTextureList[1000];
+	char* mLoadedTextureList[10000000];
 	int mLoadedTextureIndex;
 };
 

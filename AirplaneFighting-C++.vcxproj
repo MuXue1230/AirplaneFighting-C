@@ -153,6 +153,7 @@
     <ClCompile Include="AirplaneFighting-C++.cpp" />
     <ClCompile Include="Config.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="ILTextBus.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneBus.cpp" />
     <ClCompile Include="TextureBus.cpp" />
@@ -162,6 +163,7 @@
     <ClInclude Include="AImage.h" />
     <ClInclude Include="Config.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="ILTextBus.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneBus.h" />
     <ClInclude Include="TextureBus.h" />

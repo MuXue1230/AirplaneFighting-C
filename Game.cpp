@@ -4,6 +4,7 @@ Game::Game()
 {
 	mConfig = new Config("config.json", "assets/");
 	mConfig->init();
+	mILTextBus = new ILTextBus(_strdup(mConfig->get_config("language").c_str()));
 }
 
 bool Game::Initialize()
@@ -21,7 +22,7 @@ bool Game::Initialize()
 	}
 	SDL_DisplayMode mode;
 	mConfig->get_screen_size(&mode);
-	mWindow = SDL_CreateWindow("game.window.title", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, mode.w, mode.h, SDL_WINDOW_BORDERLESS);
+	mWindow = SDL_CreateWindow(mILTextBus->GetText("game.window.title"), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, mode.w, mode.h, SDL_WINDOW_BORDERLESS);
 	if (!mWindow) {
 		SDL_Log("Can't create SDL window: ", SDL_GetError());
 		return false;
