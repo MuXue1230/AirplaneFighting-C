@@ -9,16 +9,18 @@
 class ILTextBus
 {
 public:
-	ILTextBus(char* ILTranslate);
+	ILTextBus(char* ILTranslate, SDL_Renderer* renderer);
 	~ILTextBus();
 	const char* GetText(const char* ILText);
-	SDL_Texture* GetTextTexture(const char* Text);
-	SDL_Texture* GetILTextTexture(const char* ILText);
+	SDL_Texture* GetTextTexture(const char* Text, SDL_Color color);
+	SDL_Texture* GetILTextTexture(const char* ILText, SDL_Color color);
 	void SetILTranslate(char* ILTranslate);
 private:
+	SDL_Renderer* renderer;
 	char* ILTranslate;
 	std::map<std::string, std::string> ILKV;
 	char* LoadedILKVList[1000];
 	int ILKVIndex = 0;
+	TTF_Font* font;
 };
 

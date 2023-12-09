@@ -1,6 +1,6 @@
 #include "ILTextBus.h"
 
-ILTextBus::ILTextBus(char* ILTranslate)
+ILTextBus::ILTextBus(char* ILTranslate, SDL_Renderer* renderer)
 {
 	std::string file_text;
 	std::stringstream buffer;
@@ -27,10 +27,17 @@ ILTextBus::ILTextBus(char* ILTranslate)
 			}
 		}
 	}
+	this->renderer = renderer;
+	this->font = TTF_OpenFont(((std::string)"assets/font/" + (std::string)ILTranslate + (std::string)".ttf").c_str(), 24);
+	if (!font) {
+		SDL_Log(((std::string)"Load font failure: assets/font/" + (std::string)ILTranslate + (std::string)".ttf").c_str());
+		return;
+	}
 }
 
 ILTextBus::~ILTextBus()
 {
+	TTF_CloseFont(font);
 }
 
 const char* ILTextBus::GetText(const char* ILText)
@@ -43,14 +50,26 @@ const char* ILTextBus::GetText(const char* ILText)
 	return ILText;
 }
 
-SDL_Texture* ILTextBus::GetTextTexture(const char* Text)
+SDL_Texture* ILTextBus::GetTextTexture(const char* Text, SDL_Color color)
 {
-	return nullptr;
+	if (!font) {
+		SDL_Log("Because no font loaded, can't render any text.");
+		return nullptr;
+	}
+	SDL_Color textColor = color;
+	SDL_Surface* textSurface = TTF_RenderText_Solid(font, Text, textColor);
+	if (!textSurface) {
+		SDL_Log("Render text falure.");
+		return nullptr;
+	}
+	SDL_Texture* textTexture = SDL_CreateTextureFromSurface(renderer, textSurface);
+	SDL_FreeSurface(textSurface);
+	return textTexture;
 }
 
-SDL_Texture* ILTextBus::GetILTextTexture(const char* ILText)
+SDL_Texture* ILTextBus::GetILTextTexture(const char* ILText, SDL_Color color)
 {
-	return this->GetTextTexture(this->GetText(ILText));
+	return this->GetTextTexture(this->GetText(ILText), color);
 }
 
 void ILTextBus::SetILTranslate(char* ILTranslate)
