@@ -4,7 +4,6 @@ Game::Game()
 {
 	mConfig = new Config("config.json", "assets/");
 	mConfig->init();
-	mILTextBus = new ILTextBus(_strdup(mConfig->get_config("language").c_str()));
 }
 
 bool Game::Initialize()
@@ -22,12 +21,13 @@ bool Game::Initialize()
 	}
 	SDL_DisplayMode mode;
 	mConfig->get_screen_size(&mode);
-	mWindow = SDL_CreateWindow(mILTextBus->GetText("game.window.title"), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, mode.w, mode.h, SDL_WINDOW_BORDERLESS);
+	mWindow = SDL_CreateWindow("game.window.title", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, mode.w, mode.h, SDL_WINDOW_BORDERLESS);
 	if (!mWindow) {
 		SDL_Log("Can't create SDL window: ", SDL_GetError());
 		return false;
 	}
 	mRenderer = SDL_CreateRenderer(mWindow, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+	mILTextBus = new ILTextBus(_strdup(mConfig->get_config("language").c_str()), mRenderer);
 	mTextureBus = new TextureBus(mRenderer);
 	mSceneBus = new SceneBus();
 	InitScenes();
@@ -80,7 +80,14 @@ void Game::GenerateOutput()
 void Game::InitScenes()
 {
 	Scene* LoadScene = new Scene();
-	LoadScene->AddActor(*(new AImage((char*)"load", mTextureBus)));
+	AImage* load_img = new AImage((char*)"load", mTextureBus);
+	AText* load_text = new AText((char*)"game.scene.load.load_text.text", { 0,0,0,0 }, mILTextBus);
+	int w, h;
+	SDL_GetWindowSize(mWindow, &w, &h);
+	load_img->SetSize(w, h - 100);
+	load_text->SetPos((w - load_text->GetRect().w) / 2, h - 100);
+	LoadScene->AddActor(*(load_img));
+	LoadScene->AddActor(*(load_text));
 	LoadScene->SetStatus(ENABLED);
 	mSceneBus->AddSene(*LoadScene);
 }

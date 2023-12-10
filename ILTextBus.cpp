@@ -28,7 +28,7 @@ ILTextBus::ILTextBus(char* ILTranslate, SDL_Renderer* renderer)
 		}
 	}
 	this->renderer = renderer;
-	this->font = TTF_OpenFont(((std::string)"assets/font/" + (std::string)ILTranslate + (std::string)".ttf").c_str(), 24);
+	this->font = TTF_OpenFont(((std::string)"assets/font/" + (std::string)ILTranslate + (std::string)".ttf").c_str(), 96);
 	if (!font) {
 		SDL_Log(((std::string)"Load font failure: assets/font/" + (std::string)ILTranslate + (std::string)".ttf").c_str());
 		return;
@@ -43,7 +43,10 @@ ILTextBus::~ILTextBus()
 const char* ILTextBus::GetText(const char* ILText)
 {
 	for (auto item : this->LoadedILKVList) {
-		if (strcmp(item,ILText) == 0) {
+		if (item == NULL) {
+			continue;
+		}
+		if (strcmp(item, ILText) == 0) {
 			return this->ILKV[ILText].c_str();
 		}
 	}
@@ -57,7 +60,7 @@ SDL_Texture* ILTextBus::GetTextTexture(const char* Text, SDL_Color color)
 		return nullptr;
 	}
 	SDL_Color textColor = color;
-	SDL_Surface* textSurface = TTF_RenderText_Solid(font, Text, textColor);
+	SDL_Surface* textSurface = TTF_RenderUTF8_Solid(font, Text, textColor);
 	if (!textSurface) {
 		SDL_Log("Render text falure.");
 		return nullptr;

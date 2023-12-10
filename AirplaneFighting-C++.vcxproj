@@ -151,6 +151,7 @@
     <ClCompile Include="Actor.cpp" />
     <ClCompile Include="AImage.cpp" />
     <ClCompile Include="AirplaneFighting-C++.cpp" />
+    <ClCompile Include="AText.cpp" />
     <ClCompile Include="Config.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="ILTextBus.cpp" />
@@ -161,6 +162,7 @@
   <ItemGroup>
     <ClInclude Include="Actor.h" />
     <ClInclude Include="AImage.h" />
+    <ClInclude Include="AText.h" />
     <ClInclude Include="Config.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="ILTextBus.h" />

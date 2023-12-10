@@ -1,12 +1,12 @@
 #pragma once
 #include <SDL.h>
 #include "Actor.h"
-#include "TextureBus.h"
-class AImage :
+#include "ILTextBus.h"
+class AText :
     public Actor
 {
 public:
-    AImage(char* name, TextureBus* textureBus);
+    AText(char* text, SDL_Color color, ILTextBus* iLTextBus);
     void UpdateActor() override;
     void UpdateRenderer(SDL_Renderer* renderer) override;
 
@@ -15,7 +15,7 @@ public:
 
     SDL_Rect GetRect();
 private:
-    TextureBus* textureBus;
+    ILTextBus* iLTextBus;
     SDL_Texture* texture;
     SDL_Rect rect;
 };

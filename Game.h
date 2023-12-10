@@ -10,6 +10,7 @@
 #include "ILTextBus.h"
 
 #include "AImage.h"
+#include "AText.h"
 
 class Game
 {

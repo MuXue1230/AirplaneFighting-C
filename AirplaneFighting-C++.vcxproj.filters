@@ -56,6 +56,9 @@
     <ClCompile Include="ILTextBus.cpp">
       <Filter>源文件\buses</Filter>
     </ClCompile>
+    <ClCompile Include="AText.cpp">
+      <Filter>源文件\actors</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -81,6 +84,9 @@
     </ClInclude>
     <ClInclude Include="ILTextBus.h">
       <Filter>头文件\buses</Filter>
+    </ClInclude>
+    <ClInclude Include="AText.h">
+      <Filter>头文件\actors</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
