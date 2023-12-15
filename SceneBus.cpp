@@ -26,8 +26,20 @@ void SceneBus::UpdateRenderer(SDL_Renderer* renderer)
 	}
 }
 
-void SceneBus::AddSene(Scene scene)
+void SceneBus::AddScene(Scene scene)
 {
 	this->scenes[this->sceneIndex] = scene;
 	this->sceneIndex++;
+}
+
+void SceneBus::SetSceneStatus(BasicSceneStatus status, Scene scene)
+{
+	int index = 0;
+	for (auto item : this->scenes) {
+		if (item == scene) {
+			this->scenes[index].SetStatus(status);
+			return;
+		}
+		index++;
+	}
 }

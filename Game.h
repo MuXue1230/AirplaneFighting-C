@@ -33,5 +33,11 @@ private:
 	TextureBus* mTextureBus;
 	SceneBus* mSceneBus;
 	ILTextBus* mILTextBus;
+
+	bool mIsInitializing = true;
+
+	// Scenes
+	Scene* LoadScene;
+	Scene* MainScene;
 };
 

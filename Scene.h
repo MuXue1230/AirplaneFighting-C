@@ -2,6 +2,7 @@
 #include <SDL.h>
 #include <vector>
 #include <memory>
+#include <random>
 #include "Actor.h"
 
 enum BasicSceneStatus {
@@ -20,8 +21,12 @@ public:
 	template <typename ActorX>
 	void AddActor(ActorX actor);
 
-	BasicSceneStatus GetStatus();
+	bool operator==(Scene scene) const;
+
+	BasicSceneStatus GetStatus() const;
 	void SetStatus(BasicSceneStatus status);
+
+	int sid;
 private:
 	std::vector<std::shared_ptr<Actor>> actors;
 	int actorIndex = 0;

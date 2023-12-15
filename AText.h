@@ -6,7 +6,7 @@ class AText :
     public Actor
 {
 public:
-    AText(char* text, SDL_Color color, ILTextBus* iLTextBus);
+    AText(char* text, int fontSize, SDL_Color color, ILTextBus* iLTextBus);
     void UpdateActor() override;
     void UpdateRenderer(SDL_Renderer* renderer) override;
 

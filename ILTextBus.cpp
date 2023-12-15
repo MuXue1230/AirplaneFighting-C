@@ -53,8 +53,9 @@ const char* ILTextBus::GetText(const char* ILText)
 	return ILText;
 }
 
-SDL_Texture* ILTextBus::GetTextTexture(const char* Text, SDL_Color color)
+SDL_Texture* ILTextBus::GetTextTexture(const char* Text, int fontSize, SDL_Color color)
 {
+	this->font = TTF_OpenFont(((std::string)"assets/font/" + (std::string)ILTranslate + (std::string)".ttf").c_str(), fontSize);
 	if (!font) {
 		SDL_Log("Because no font loaded, can't render any text.");
 		return nullptr;
@@ -70,9 +71,9 @@ SDL_Texture* ILTextBus::GetTextTexture(const char* Text, SDL_Color color)
 	return textTexture;
 }
 
-SDL_Texture* ILTextBus::GetILTextTexture(const char* ILText, SDL_Color color)
+SDL_Texture* ILTextBus::GetILTextTexture(const char* ILText, int fontSize, SDL_Color color)
 {
-	return this->GetTextTexture(this->GetText(ILText), color);
+	return this->GetTextTexture(this->GetText(ILText), fontSize, color);
 }
 
 void ILTextBus::SetILTranslate(char* ILTranslate)

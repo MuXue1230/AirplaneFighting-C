@@ -1,2 +1,5 @@
 game.window.title=Airplane Fighting
+
 game.scene.load.load_text.text=Loading...
+
+game.scene.main.game_title.text=Airplane Fighting

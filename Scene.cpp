@@ -2,6 +2,10 @@
 
 Scene::Scene()
 {
+	std::random_device rd;
+	std::mt19937 gen(rd());
+	std::uniform_int_distribution<> distrib(1000000000, 9999999999);
+	this->sid = distrib(gen);
 }
 
 void Scene::UpdateActors()
@@ -28,7 +32,12 @@ void Scene::UpdateSceneRenderer(SDL_Renderer* renderer)
 {
 }
 
-BasicSceneStatus Scene::GetStatus()
+bool Scene::operator==(Scene scene) const
+{
+	return this->sid == scene.sid;
+}
+
+BasicSceneStatus Scene::GetStatus() const
 {
 	return this->status;
 }

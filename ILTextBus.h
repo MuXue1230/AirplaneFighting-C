@@ -13,8 +13,8 @@ public:
 	ILTextBus(char* ILTranslate, SDL_Renderer* renderer);
 	~ILTextBus();
 	const char* GetText(const char* ILText);
-	SDL_Texture* GetTextTexture(const char* Text, SDL_Color color);
-	SDL_Texture* GetILTextTexture(const char* ILText, SDL_Color color);
+	SDL_Texture* GetTextTexture(const char* Text, int fontSize, SDL_Color color);
+	SDL_Texture* GetILTextTexture(const char* ILText, int fontSize, SDL_Color color);
 	void SetILTranslate(char* ILTranslate);
 private:
 	SDL_Renderer* renderer;

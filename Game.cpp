@@ -31,6 +31,8 @@ bool Game::Initialize()
 	mTextureBus = new TextureBus(mRenderer);
 	mSceneBus = new SceneBus();
 	InitScenes();
+	mSceneBus->SetSceneStatus(DISABLED, *this->LoadScene);
+	mSceneBus->SetSceneStatus(ENABLED, *this->MainScene);
 	return true;
 }
 
@@ -67,6 +69,7 @@ void Game::ProcessesInput()
 
 void Game::UpdateGame()
 {
+	mSceneBus->UpdateScenes();
 }
 
 void Game::GenerateOutput()
@@ -79,15 +82,24 @@ void Game::GenerateOutput()
 
 void Game::InitScenes()
 {
-	Scene* LoadScene = new Scene();
-	AImage* load_img = new AImage((char*)"load", mTextureBus);
-	AText* load_text = new AText((char*)"game.scene.load.load_text.text", { 0,0,0,0 }, mILTextBus);
 	int w, h;
 	SDL_GetWindowSize(mWindow, &w, &h);
+
+	// Set up load scene
+	LoadScene = new Scene();
+	AImage* load_img = new AImage((char*)"load", mTextureBus);
+	AText* load_text = new AText((char*)"game.scene.load.load_text.text", 96, { 0,0,0,0 }, mILTextBus);
 	load_img->SetSize(w, h - 100);
 	load_text->SetPos((w - load_text->GetRect().w) / 2, h - 100);
 	LoadScene->AddActor(*(load_img));
 	LoadScene->AddActor(*(load_text));
-	LoadScene->SetStatus(ENABLED);
-	mSceneBus->AddSene(*LoadScene);
+	mSceneBus->AddScene(*LoadScene);
+	mSceneBus->SetSceneStatus(ENABLED, *LoadScene);
+
+	// Set up main scene
+	MainScene = new Scene();
+	AText* game_title = new AText((char*)"game.scene.main.game_title.text", 96, { 0,0,0,0 }, mILTextBus);
+	game_title->SetPos((w - game_title->GetRect().w) / 2, h / 2 - 100);
+	MainScene->AddActor(*(game_title));
+	mSceneBus->AddScene(*MainScene);
 }

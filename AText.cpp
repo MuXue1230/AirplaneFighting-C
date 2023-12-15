@@ -1,10 +1,10 @@
 #include "AText.h"
 
-AText::AText(char* text, SDL_Color color, ILTextBus* iLTextBus)
+AText::AText(char* text, int fontSize, SDL_Color color, ILTextBus* iLTextBus)
 {
 	int textureWidth, textureHeight;
 	this->iLTextBus = iLTextBus;
-	this->texture = this->iLTextBus->GetILTextTexture(text, color);
+	this->texture = this->iLTextBus->GetILTextTexture(text, fontSize, color);
 	SDL_QueryTexture(texture, NULL, NULL, &textureWidth, &textureHeight);
 	this->rect = { 0, 0, textureWidth, textureHeight };
 }

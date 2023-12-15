@@ -8,7 +8,8 @@ public:
 	~SceneBus();
 	void UpdateScenes();
 	void UpdateRenderer(SDL_Renderer* renderer);
-	void AddSene(Scene scene);
+	void AddScene(Scene scene);
+	void SetSceneStatus(BasicSceneStatus status, Scene scene);
 private:
 	Scene scenes[100];
 	int sceneIndex = 0;
