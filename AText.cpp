@@ -13,6 +13,10 @@ void AText::UpdateActor()
 {
 }
 
+void AText::UpdateEvent(SDL_Event event)
+{
+}
+
 void AText::UpdateRenderer(SDL_Renderer* renderer)
 {
 	SDL_RenderCopy(renderer, texture, NULL, &rect);

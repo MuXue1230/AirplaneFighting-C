@@ -59,6 +59,9 @@
     <ClCompile Include="AText.cpp">
       <Filter>源文件\actors</Filter>
     </ClCompile>
+    <ClCompile Include="AButton.cpp">
+      <Filter>源文件\actors</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -86,6 +89,9 @@
       <Filter>头文件\buses</Filter>
     </ClInclude>
     <ClInclude Include="AText.h">
+      <Filter>头文件\actors</Filter>
+    </ClInclude>
+    <ClInclude Include="AButton.h">
       <Filter>头文件\actors</Filter>
     </ClInclude>
   </ItemGroup>

@@ -13,6 +13,7 @@ public:
 	Actor();
 	~Actor();
 	virtual void UpdateActor();
+	virtual void UpdateEvent(SDL_Event event);
 	virtual void UpdateRenderer(SDL_Renderer* renderer);
 private:
 	BasicActorStatus status = ACTIVE;

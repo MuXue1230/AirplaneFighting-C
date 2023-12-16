@@ -16,7 +16,19 @@ void Scene::UpdateActors()
 	this->UpdateScene();
 }
 
+void Scene::UpdateEvent(SDL_Event event)
+{
+	for (auto actor : this->actors) {
+		actor->UpdateEvent(event);
+	}
+	this->UpdateSceneEvent(event);
+}
+
 void Scene::UpdateScene()
+{
+}
+
+void Scene::UpdateSceneEvent(SDL_Event event)
 {
 }
 

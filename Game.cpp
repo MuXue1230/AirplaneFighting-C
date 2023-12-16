@@ -31,8 +31,8 @@ bool Game::Initialize()
 	mTextureBus = new TextureBus(mRenderer);
 	mSceneBus = new SceneBus();
 	InitScenes();
-	mSceneBus->SetSceneStatus(DISABLED, *this->LoadScene);
-	mSceneBus->SetSceneStatus(ENABLED, *this->MainScene);
+	mSceneBus->SetSceneStatus(S_INACTIVE, *this->LoadScene);
+	mSceneBus->SetSceneStatus(S_ACTIVE, *this->MainScene);
 	return true;
 }
 
@@ -64,6 +64,7 @@ void Game::ProcessesInput()
 			mIsRunning = false;
 			break;
 		}
+		mSceneBus->UpdateEvent(event);
 	}
 }
 
@@ -94,12 +95,18 @@ void Game::InitScenes()
 	LoadScene->AddActor(*(load_img));
 	LoadScene->AddActor(*(load_text));
 	mSceneBus->AddScene(*LoadScene);
-	mSceneBus->SetSceneStatus(ENABLED, *LoadScene);
+	mSceneBus->SetSceneStatus(S_ACTIVE, *LoadScene);
 
 	// Set up main scene
 	MainScene = new Scene();
-	AText* game_title = new AText((char*)"game.scene.main.game_title.text", 96, { 0,0,0,0 }, mILTextBus);
-	game_title->SetPos((w - game_title->GetRect().w) / 2, h / 2 - 100);
+	AImage* background = new AImage((char*)"gui/background", mTextureBus);
+	AText* game_title = new AText((char*)"game.scene.main.game_title.text", 96, { 255,255,255,255 }, mILTextBus);
+	AButton* quit_button = new AButton(mTextureBus);
+	background->SetSize(w, h);
+	game_title->SetPos((w - game_title->GetRect().w) / 2, h / 2 - 300);
+	quit_button->SetPos((w - quit_button->GetRect().w) / 2, h / 2 + 100);
+	MainScene->AddActor(*(background));
 	MainScene->AddActor(*(game_title));
+	MainScene->AddActor(*(quit_button));
 	mSceneBus->AddScene(*MainScene);
 }

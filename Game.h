@@ -11,6 +11,7 @@
 
 #include "AImage.h"
 #include "AText.h"
+#include "AButton.h"
 
 class Game
 {

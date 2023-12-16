@@ -6,8 +6,8 @@
 #include "Actor.h"
 
 enum BasicSceneStatus {
-	ENABLED=1,
-	DISABLED
+	S_ACTIVE=1,
+	S_INACTIVE
 };
 
 class Scene
@@ -15,7 +15,9 @@ class Scene
 public:
 	Scene();
 	void UpdateActors();
+	void UpdateEvent(SDL_Event event);
 	virtual void UpdateScene();
+	virtual void UpdateSceneEvent(SDL_Event event);
 	void UpdateActorRenderers(SDL_Renderer* renderer);
 	virtual void UpdateSceneRenderer(SDL_Renderer* renderer);
 	template <typename ActorX>
@@ -30,7 +32,7 @@ public:
 private:
 	std::vector<std::shared_ptr<Actor>> actors;
 	int actorIndex = 0;
-	BasicSceneStatus status = DISABLED;
+	BasicSceneStatus status = S_INACTIVE;
 };
 
 template <typename ActorX>

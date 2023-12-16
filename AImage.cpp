@@ -13,6 +13,10 @@ void AImage::UpdateActor()
 {
 }
 
+void AImage::UpdateEvent(SDL_Event event)
+{
+}
+
 void AImage::UpdateRenderer(SDL_Renderer* renderer)
 {
 	SDL_RenderCopy(renderer, texture, NULL, &rect);
@@ -30,7 +34,7 @@ void AImage::SetSize(int w, int h)
 	this->rect.h = h;
 }
 
-SDL_Rect AImage::GetRect()
+SDL_Rect AImage::GetRect() const
 {
 	return this->rect;
 }

@@ -148,6 +148,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AButton.cpp" />
     <ClCompile Include="Actor.cpp" />
     <ClCompile Include="AImage.cpp" />
     <ClCompile Include="AirplaneFighting-C++.cpp" />
@@ -160,6 +161,7 @@
     <ClCompile Include="TextureBus.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AButton.h" />
     <ClInclude Include="Actor.h" />
     <ClInclude Include="AImage.h" />
     <ClInclude Include="AText.h" />

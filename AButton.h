@@ -1,12 +1,19 @@
 #pragma once
-#include <SDL.h>
 #include "Actor.h"
-#include "ILTextBus.h"
-class AText :
+#include "TextureBus.h"
+
+enum ButtonStatus {
+    B_NORMAL = 1,
+    B_OVER,
+    B_PRESS,
+    B_DISABLED,
+};
+
+class AButton :
     public Actor
 {
 public:
-    AText(char* text, int fontSize, SDL_Color color, ILTextBus* iLTextBus);
+    AButton(TextureBus* textureBus);
     void UpdateActor() override;
     void UpdateEvent(SDL_Event event) override;
     void UpdateRenderer(SDL_Renderer* renderer) override;
@@ -14,10 +21,13 @@ public:
     void SetPos(int x, int y);
     void SetSize(int w, int h);
 
-    SDL_Rect GetRect();
+    SDL_Rect GetRect() const;
 private:
-    ILTextBus* iLTextBus;
+    TextureBus* textureBus;
     SDL_Texture* texture;
     SDL_Rect rect;
+
+    // Button status
+    ButtonStatus status = B_NORMAL;
 };
 
