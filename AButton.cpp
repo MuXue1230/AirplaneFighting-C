@@ -1,12 +1,14 @@
 #include "AButton.h"
 
-AButton::AButton(TextureBus* textureBus)
+AButton::AButton(char* text, ILTextBus* iLTextBus, TextureBus* textureBus)
 {
 	int textureWidth, textureHeight;
 	this->textureBus = textureBus;
 	this->texture = this->textureBus->GetTexture((char*)"gui/button");
 	SDL_QueryTexture(texture, NULL, NULL, &textureWidth, &textureHeight);
 	this->rect = { 0, 0, textureWidth, textureHeight };
+	this->text = new AText(text, 36, { 0,0,0,0 }, iLTextBus);
+	this->text->SetPos((textureWidth - this->text->GetRect().w) / 2, (textureHeight - this->text->GetRect().h) / 2);
 }
 
 void AButton::UpdateActor()
@@ -53,6 +55,7 @@ void AButton::UpdateEvent(SDL_Event event)
 			SDL_GetMouseState(&mouseX, &mouseY);
 			if (mouseX >= rect.x && mouseX <= rect.x + rect.w && mouseY >= rect.y && mouseY <= rect.y + rect.h) {
 				this->status = B_OVER;
+				this->pressed();
 			}
 			else {
 				this->status = B_NORMAL;
@@ -65,18 +68,20 @@ void AButton::UpdateEvent(SDL_Event event)
 void AButton::UpdateRenderer(SDL_Renderer* renderer)
 {
 	SDL_RenderCopy(renderer, texture, NULL, &rect);
+	this->text->UpdateRenderer(renderer);
+}
+
+void AButton::pressed()
+{
 }
 
 void AButton::SetPos(int x, int y)
 {
+	int textureWidth, textureHeight;
+	SDL_QueryTexture(texture, NULL, NULL, &textureWidth, &textureHeight);
 	this->rect.x = x;
 	this->rect.y = y;
-}
-
-void AButton::SetSize(int w, int h)
-{
-	this->rect.w = w;
-	this->rect.h = h;
+	this->text->SetPos((textureWidth - this->text->GetRect().w) / 2 + x, (textureHeight - this->text->GetRect().h) / 2 + y);
 }
 
 SDL_Rect AButton::GetRect() const

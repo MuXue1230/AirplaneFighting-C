@@ -3,3 +3,4 @@ game.window.title=飞机大战
 game.scene.load.load_text.text=加载中……
 
 game.scene.main.game_title.text=飞机大战
+game.scene.main.quit_button.text=退出

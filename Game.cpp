@@ -101,7 +101,7 @@ void Game::InitScenes()
 	MainScene = new Scene();
 	AImage* background = new AImage((char*)"gui/background", mTextureBus);
 	AText* game_title = new AText((char*)"game.scene.main.game_title.text", 96, { 255,255,255,255 }, mILTextBus);
-	AButton* quit_button = new AButton(mTextureBus);
+	AButton* quit_button = new AButton((char*)"game.scene.main.quit_button.text", mILTextBus, mTextureBus);
 	background->SetSize(w, h);
 	game_title->SetPos((w - game_title->GetRect().w) / 2, h / 2 - 300);
 	quit_button->SetPos((w - quit_button->GetRect().w) / 2, h / 2 + 100);
