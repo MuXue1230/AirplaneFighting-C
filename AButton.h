@@ -15,6 +15,7 @@ class AButton :
     public Actor
 {
 public:
+    AButton() {};
     AButton(char* text, ILTextBus* iLTextBus, TextureBus* textureBus);
     void UpdateActor() override;
     void UpdateEvent(SDL_Event event) override;
@@ -25,7 +26,7 @@ public:
     void SetPos(int x, int y);
 
     SDL_Rect GetRect() const;
-private:
+protected:
     TextureBus* textureBus;
     SDL_Texture* texture;
     SDL_Rect rect;
