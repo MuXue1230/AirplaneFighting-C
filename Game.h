@@ -4,6 +4,7 @@
 #include <SDL_image.h>
 #include <SDL_ttf.h>
 
+#include "functions.h"
 #include "Config.h"
 #include "TextureBus.h"
 #include "SceneBus.h"

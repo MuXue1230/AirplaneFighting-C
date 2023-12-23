@@ -15,13 +15,10 @@ class AButton :
     public Actor
 {
 public:
-    AButton() {};
-    AButton(char* text, ILTextBus* iLTextBus, TextureBus* textureBus);
+    AButton(char* text, ILTextBus* iLTextBus, TextureBus* textureBus, void (*clickFunc)());
     void UpdateActor() override;
     void UpdateEvent(SDL_Event event) override;
     void UpdateRenderer(SDL_Renderer* renderer) override;
-
-    virtual void pressed();
 
     void SetPos(int x, int y);
 
@@ -32,6 +29,8 @@ protected:
     SDL_Rect rect;
 
     AText* text;
+
+    void (*clickFunc)();
 
     // Button status
     ButtonStatus status = B_NORMAL;

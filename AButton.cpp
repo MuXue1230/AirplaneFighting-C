@@ -1,6 +1,6 @@
 #include "AButton.h"
 
-AButton::AButton(char* text, ILTextBus* iLTextBus, TextureBus* textureBus)
+AButton::AButton(char* text, ILTextBus* iLTextBus, TextureBus* textureBus, void (*clickFunc)())
 {
 	int textureWidth, textureHeight;
 	this->textureBus = textureBus;
@@ -9,6 +9,7 @@ AButton::AButton(char* text, ILTextBus* iLTextBus, TextureBus* textureBus)
 	this->rect = { 0, 0, textureWidth, textureHeight };
 	this->text = new AText(text, 36, { 0,0,0,0 }, iLTextBus);
 	this->text->SetPos((textureWidth - this->text->GetRect().w) / 2, (textureHeight - this->text->GetRect().h) / 2);
+	this->clickFunc = clickFunc;
 }
 
 void AButton::UpdateActor()
@@ -55,7 +56,7 @@ void AButton::UpdateEvent(SDL_Event event)
 			SDL_GetMouseState(&mouseX, &mouseY);
 			if (mouseX >= rect.x && mouseX <= rect.x + rect.w && mouseY >= rect.y && mouseY <= rect.y + rect.h) {
 				this->status = B_OVER;
-				this->pressed();
+				this->clickFunc();
 			}
 			else {
 				this->status = B_NORMAL;
@@ -69,10 +70,6 @@ void AButton::UpdateRenderer(SDL_Renderer* renderer)
 {
 	SDL_RenderCopy(renderer, texture, NULL, &rect);
 	this->text->UpdateRenderer(renderer);
-}
-
-void AButton::pressed()
-{
 }
 
 void AButton::SetPos(int x, int y)
