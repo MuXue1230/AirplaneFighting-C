@@ -2,6 +2,7 @@
 #include "Actor.h"
 #include "TextureBus.h"
 #include "ILTextBus.h"
+#include "SoundBus.h"
 #include "AText.h"
 
 enum ButtonStatus {
@@ -15,7 +16,7 @@ class AButton :
     public Actor
 {
 public:
-    AButton(char* text, ILTextBus* iLTextBus, TextureBus* textureBus, void (*clickFunc)());
+    AButton(char* text, ILTextBus* iLTextBus, TextureBus* textureBus, SoundBus* soundBus, void (*clickFunc)());
     void UpdateActor() override;
     void UpdateEvent(SDL_Event event) override;
     void UpdateRenderer(SDL_Renderer* renderer) override;
@@ -25,6 +26,7 @@ public:
     SDL_Rect GetRect() const;
 protected:
     TextureBus* textureBus;
+    SoundBus* soundBus;
     SDL_Texture* texture;
     SDL_Rect rect;
 

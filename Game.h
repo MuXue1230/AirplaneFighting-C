@@ -7,6 +7,7 @@
 #include "functions.h"
 #include "Config.h"
 #include "TextureBus.h"
+#include "SoundBus.h"
 #include "SceneBus.h"
 #include "ILTextBus.h"
 
@@ -33,6 +34,7 @@ private:
 	bool mIsRunning = true;
 	Config* mConfig;
 	TextureBus* mTextureBus;
+	SoundBus* mSoundBus;
 	SceneBus* mSceneBus;
 	ILTextBus* mILTextBus;
 

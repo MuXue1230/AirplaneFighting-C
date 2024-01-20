@@ -15,7 +15,10 @@ TextureBus::~TextureBus()
 
 SDL_Texture* TextureBus::GetTexture(char* texture_name)
 {
-	for (auto item : this->mLoadedTextureList) {
+	for (const auto &item : this->mLoadedTextureList) {
+		if (item == NULL) {
+			break;
+		}
 		if (item == texture_name) {
 			return this->mTextures[texture_name];
 		}

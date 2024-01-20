@@ -10,7 +10,7 @@ Scene::Scene()
 
 void Scene::UpdateActors()
 {
-	for (auto actor : this->actors) {
+	for (auto &actor : this->actors) {
 		actor->UpdateActor();
 	}
 	this->UpdateScene();
@@ -18,7 +18,7 @@ void Scene::UpdateActors()
 
 void Scene::UpdateEvent(SDL_Event event)
 {
-	for (auto actor : this->actors) {
+	for (auto &actor : this->actors) {
 		actor->UpdateEvent(event);
 	}
 	this->UpdateSceneEvent(event);
@@ -34,7 +34,7 @@ void Scene::UpdateSceneEvent(SDL_Event event)
 
 void Scene::UpdateActorRenderers(SDL_Renderer* renderer)
 {
-	for (auto actor : this->actors) {
+	for (auto &actor : this->actors) {
 		actor->UpdateRenderer(renderer);
 	}
 	this->UpdateSceneRenderer(renderer);

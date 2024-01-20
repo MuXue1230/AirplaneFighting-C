@@ -9,10 +9,17 @@ public:
 	void UpdateScenes();
 	void UpdateEvent(SDL_Event event);
 	void UpdateRenderer(SDL_Renderer* renderer);
-	void AddScene(Scene scene);
+	template <typename SceneX>
+	void AddScene(SceneX scene);
 	void SetSceneStatus(BasicSceneStatus status, Scene scene);
 private:
-	Scene scenes[100];
+	std::vector<std::shared_ptr<Scene>> scenes;
 	int sceneIndex = 0;
 };
 
+template<typename SceneX>
+inline void SceneBus::AddScene(SceneX scene)
+{
+	this->scenes.push_back(std::make_shared<SceneX>(scene));
+	this->sceneIndex++;
+}

@@ -117,7 +117,7 @@ bool Config::reload()
 bool Config::write()
 {
 	this->config_str = "{\n    \"";
-	for (auto item : this->config) {
+	for (const auto &item : this->config) {
 		this->config_str += item[0] + "\": \"" + item[1] + "\",\n    ";
 	}
 	this->config_str += "\b\b\b\b}";

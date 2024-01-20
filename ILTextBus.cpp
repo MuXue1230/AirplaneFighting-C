@@ -42,7 +42,7 @@ ILTextBus::~ILTextBus()
 
 const char* ILTextBus::GetText(const char* ILText)
 {
-	for (auto item : this->LoadedILKVList) {
+	for (const auto &item : this->LoadedILKVList) {
 		if (item == NULL) {
 			continue;
 		}
